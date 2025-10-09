@@ -2,9 +2,11 @@ extends Node
 
 @onready var http: HTTPRequest = HTTPRequest.new()
 @onready var timer: Timer = Timer.new()
+@onready var color_rect: ColorRect = $"../ColorRect"
+
 
 var last_value: String = ""   # to track changes
-var url: String = "https://blynk.cloud/external/api/get?token=l2OXOjMapLMem-CDA40aBjzBdGpjsi_H&V0"
+var url: String = "https://blynk.cloud/external/api/get?token=l2OXOjMapLMem-CDA40aBjzBdGpjsi_H&V6"
 var val: String = "unknown"   # default value
 
 func _ready() -> void:
@@ -13,7 +15,7 @@ func _ready() -> void:
 	http.request_completed.connect(_on_request_completed)
 
 	# Add Timer node
-	timer.wait_time = 5.0
+	timer.wait_time = 1.0
 	timer.one_shot = false
 	timer.autostart = true
 	add_child(timer)
@@ -40,8 +42,10 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		last_value = text
 		if text == "1":
 			print("✅ Switch turned ON")
+			color_rect.visible = false
 		elif text == "0":
 			print("❌ Switch turned OFF")
+			color_rect.visible = true
 		else:
 			print("⚠️ Unexpected value:", text)
 
