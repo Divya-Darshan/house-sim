@@ -1,0 +1,65 @@
+[gd_scene load_steps=13 format=3 uid="uid://ck32j0meua6lr"]
+
+[ext_resource type="Texture2D" uid="uid://blj7lc71corjl" path="res://fan/0001.png" id="1_ndjix"]
+[ext_resource type="Texture2D" uid="uid://cp6r7dnfuwj1s" path="res://fan/0002.png" id="2_kpeo8"]
+[ext_resource type="Texture2D" uid="uid://dvd5jtaweaoh2" path="res://fan/0003.png" id="3_qedtv"]
+[ext_resource type="Texture2D" uid="uid://ckfefqci6td0w" path="res://fan/0004.png" id="4_ry7g4"]
+[ext_resource type="Texture2D" uid="uid://cpvhiq56c1ely" path="res://fan/0005.png" id="5_o6fxo"]
+[ext_resource type="Texture2D" uid="uid://ker4j7p44lfi" path="res://fan/0006.png" id="6_4xjsr"]
+[ext_resource type="Texture2D" uid="uid://bqdh8w3pgth6s" path="res://fan/0007.png" id="7_8pfi6"]
+[ext_resource type="Texture2D" uid="uid://kayanw744rfh" path="res://fan/0008.png" id="8_jd0q3"]
+[ext_resource type="Texture2D" uid="uid://dbtsue2ic7a15" path="res://fan/0009.png" id="9_04eir"]
+[ext_resource type="Texture2D" uid="uid://1uo5eg52ai8a" path="res://fan/0010.png" id="10_nxj5n"]
+[ext_resource type="Script" path="res://fan/fan.gd" id="11_la7fv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2o254"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ndjix")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ndjix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kpeo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qedtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ry7g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o6fxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4xjsr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8pfi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jd0q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_04eir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nxj5n")
+}],
+"loop": false,
+"name": &"loop",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_2o254")
+animation = &"loop"
+autoplay = "idle"
+script = ExtResource("11_la7fv")

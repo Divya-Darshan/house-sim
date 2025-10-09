@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bp2dj2s7fhssr"]
+[gd_scene load_steps=26 format=4 uid="uid://bp2dj2s7fhssr"]
 
 [ext_resource type="Texture2D" uid="uid://dlliiaadp1ode" path="res://house/TopDownHouse_FloorsAndWalls.png" id="1_f7tjm"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="2_jeir6"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://rkrx6qxbgjgu" path="res://house/TopDownHouse_FurnitureState1.png" id="3_jcauq"]
 [ext_resource type="Texture2D" uid="uid://byokdb57h3gup" path="res://house/TopDownHouse_FurnitureState2.png" id="4_o2rn2"]
 [ext_resource type="Texture2D" uid="uid://p73imcu5mp0b" path="res://house/TopDownHouse_SmallItems.png" id="5_gt0mt"]
+[ext_resource type="Script" path="res://manger.gd" id="7_6qyuh"]
+[ext_resource type="PackedScene" uid="uid://ck32j0meua6lr" path="res://fan/fan.tscn" id="8_wvyii"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ihi63"]
 texture = ExtResource("1_f7tjm")
@@ -1782,6 +1784,16 @@ sources/0 = SubResource("TileSetAtlasSource_fle7f")
 sources/1 = SubResource("TileSetAtlasSource_ah0li")
 sources/2 = SubResource("TileSetAtlasSource_3i2ih")
 
+[sub_resource type="Environment" id="Environment_mrowa"]
+background_mode = 3
+ssao_enabled = true
+glow_enabled = true
+glow_bloom = 0.09
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_yn37d"]
+
+[sub_resource type="Compositor" id="Compositor_gfme7"]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="back" type="TileMapLayer" parent="."]
@@ -1813,3 +1825,14 @@ tile_set = SubResource("TileSet_2j406")
 position = Vector2(536, 220)
 zoom = Vector2(2.5, 2.5)
 script = ExtResource("2_jeir6")
+
+[node name="manger" type="Node" parent="."]
+script = ExtResource("7_6qyuh")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mrowa")
+camera_attributes = SubResource("CameraAttributesPractical_yn37d")
+compositor = SubResource("Compositor_gfme7")
+
+[node name="Node2D" parent="." instance=ExtResource("8_wvyii")]
+position = Vector2(611, 271)
