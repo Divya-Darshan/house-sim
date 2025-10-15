@@ -53,13 +53,12 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_nxj5n")
 }],
-"loop": false,
+"loop": true,
 "name": &"loop",
 "speed": 5.0
 }]
 
 [node name="Node2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_2o254")
-animation = &"loop"
-autoplay = "idle"
+animation = &"idle"
 script = ExtResource("11_la7fv")

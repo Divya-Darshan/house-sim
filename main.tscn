@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://bp2dj2s7fhssr"]
+[gd_scene load_steps=54 format=4 uid="uid://bp2dj2s7fhssr"]
 
 [ext_resource type="Texture2D" uid="uid://dlliiaadp1ode" path="res://house/TopDownHouse_FloorsAndWalls.png" id="1_f7tjm"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="2_jeir6"]
@@ -8,7 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://p73imcu5mp0b" path="res://house/TopDownHouse_SmallItems.png" id="5_gt0mt"]
 [ext_resource type="Texture2D" uid="uid://d0hpietg3isup" path="res://house/TopDownHouse_FloorsAndWalls_OpenDoors.png" id="6_secgh"]
 [ext_resource type="Script" path="res://manger.gd" id="7_6qyuh"]
+[ext_resource type="Texture2D" uid="uid://deo535degndbe" path="res://plants/p.png" id="7_jgs5q"]
+[ext_resource type="Texture2D" uid="uid://dk4c4kyq3t4f2" path="res://plants/WaterFall(Water).png" id="8_4y4w0"]
+[ext_resource type="Script" path="res://video_stream_player.gd" id="8_dqt87"]
 [ext_resource type="PackedScene" uid="uid://ck32j0meua6lr" path="res://fan/fan.tscn" id="8_wvyii"]
+[ext_resource type="Script" path="res://plants/water.gd" id="9_0hyce"]
+[ext_resource type="VideoStream" path="res://vid/PEC.ogv" id="10_308mk"]
+[ext_resource type="Script" path="res://lamp_coll.gd" id="12_umwi6"]
+[ext_resource type="Texture2D" uid="uid://btixvdy6pjiba" path="res://house/light/pipo-gate01d192.png" id="13_w7blv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ihi63"]
 texture = ExtResource("1_f7tjm")
@@ -2521,15 +2528,133 @@ sources/0 = SubResource("TileSetAtlasSource_fle7f")
 sources/1 = SubResource("TileSetAtlasSource_ah0li")
 sources/2 = SubResource("TileSetAtlasSource_3i2ih")
 
-[sub_resource type="Environment" id="Environment_mrowa"]
-background_mode = 3
-ssao_enabled = true
-glow_enabled = true
-glow_bloom = 0.09
+[sub_resource type="AtlasTexture" id="AtlasTexture_0df2e"]
+atlas = ExtResource("8_4y4w0")
+region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_yn37d"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajq37"]
+atlas = ExtResource("8_4y4w0")
+region = Rect2(128, 0, 128, 128)
 
-[sub_resource type="Compositor" id="Compositor_gfme7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfdbv"]
+atlas = ExtResource("8_4y4w0")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhav7"]
+atlas = ExtResource("8_4y4w0")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acv8e"]
+atlas = ExtResource("8_4y4w0")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rly2y"]
+atlas = ExtResource("8_4y4w0")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hxcga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0df2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajq37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfdbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhav7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acv8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rly2y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcpvj"]
+atlas = ExtResource("13_w7blv")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rd7x"]
+atlas = ExtResource("13_w7blv")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p40g"]
+atlas = ExtResource("13_w7blv")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk8rq"]
+atlas = ExtResource("13_w7blv")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfefo"]
+atlas = ExtResource("13_w7blv")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ps7f"]
+atlas = ExtResource("13_w7blv")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0td4"]
+atlas = ExtResource("13_w7blv")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_voved"]
+atlas = ExtResource("13_w7blv")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8h2h"]
+atlas = ExtResource("13_w7blv")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fby6"]
+atlas = ExtResource("13_w7blv")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bxnjj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcpvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rd7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p40g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk8rq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfefo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ps7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0td4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_voved")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8h2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fby6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Node2D" type="Node2D"]
 
@@ -2560,6 +2685,37 @@ scale = Vector2(-1.35674, -1.35674)
 tile_map_data = PackedByteArray("AAAcAA4AAgAHAAcAAAAcAA8AAgAHAAgAAAAcABAAAgAHAAkAAAAdAA4AAgAIAAcAAAAdAA8AAgAIAAgAAAAdABAAAgAIAAkAAAA=")
 tile_set = SubResource("TileSet_2j406")
 
+[node name="P" type="Sprite2D" parent="."]
+position = Vector2(621, 211)
+scale = Vector2(2.48816, 2.48816)
+texture = ExtResource("7_jgs5q")
+region_enabled = true
+region_rect = Rect2(16, 8, 32, 40)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(845, 219)
+rotation = -3.15479
+scale = Vector2(0.469354, -0.318417)
+sprite_frames = SubResource("SpriteFrames_hxcga")
+autoplay = "default"
+frame_progress = 0.999425
+offset = Vector2(0.045, 0)
+script = ExtResource("9_0hyce")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+visible = false
+offset_left = 427.0
+offset_top = 159.0
+offset_right = 1707.0
+offset_bottom = 879.0
+scale = Vector2(0.0873586, 0.081257)
+stream = ExtResource("10_308mk")
+volume_db = -80.0
+autoplay = true
+loop = true
+script = ExtResource("8_dqt87")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(536, 220)
 zoom = Vector2(2.5, 2.5)
@@ -2568,14 +2724,10 @@ script = ExtResource("2_jeir6")
 [node name="manger" type="Node" parent="."]
 script = ExtResource("7_6qyuh")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_mrowa")
-camera_attributes = SubResource("CameraAttributesPractical_yn37d")
-compositor = SubResource("Compositor_gfme7")
-
-[node name="Node2D" parent="." instance=ExtResource("8_wvyii")]
+[node name="fan" parent="." instance=ExtResource("8_wvyii")]
 position = Vector2(585, 294)
 scale = Vector2(0.788716, 0.788716)
+animation = &"loop"
 autoplay = "loop"
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -2583,5 +2735,34 @@ offset_left = -98.0
 offset_top = -57.0
 offset_right = -58.0
 offset_bottom = -17.0
-scale = Vector2(101.617, 20.0377)
+scale = Vector2(34.4048, 19.3379)
 color = Color(0, 0, 0, 0.632)
+
+[node name="lamp-coll" type="Node2D" parent="."]
+visible = false
+position = Vector2(385, 187)
+scale = Vector2(0.305, 0.83)
+script = ExtResource("12_umwi6")
+
+[node name="lamp" type="AnimatedSprite2D" parent="lamp-coll"]
+self_modulate = Color(100, 100, 100, 0.179)
+sprite_frames = SubResource("SpriteFrames_bxnjj")
+frame_progress = 0.395244
+
+[node name="lamp2" type="AnimatedSprite2D" parent="lamp-coll"]
+self_modulate = Color(100, 100, 100, 0.179)
+position = Vector2(32.787, 7.22893)
+rotation = -0.11346
+scale = Vector2(0.961314, 1.24976)
+skew = -0.587456
+sprite_frames = SubResource("SpriteFrames_bxnjj")
+frame_progress = 0.203545
+
+[node name="lamp3" type="AnimatedSprite2D" parent="lamp-coll"]
+self_modulate = Color(100, 100, 100, 0.179)
+position = Vector2(-36.0656, 9.63858)
+rotation = 0.106474
+scale = Vector2(0.965679, 1.22458)
+skew = 0.563058
+sprite_frames = SubResource("SpriteFrames_bxnjj")
+frame_progress = 0.203545

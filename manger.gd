@@ -6,7 +6,7 @@ extends Node
 
 
 var last_value: String = ""   # to track changes
-var url: String = "https://blynk.cloud/external/api/get?token=l2OXOjMapLMem-CDA40aBjzBdGpjsi_H&V6"
+var url: String = "https://blynk.cloud/external/api/get?token=l2OXOjMapLMem-CDA40aBjzBdGpjsi_H&V0"
 var val: String = "unknown"   # default value
 
 func _ready() -> void:
@@ -43,6 +43,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		if text == "1":
 			print("✅ Switch turned ON")
 			color_rect.visible = false
+
 		elif text == "0":
 			print("❌ Switch turned OFF")
 			color_rect.visible = true
