@@ -2694,9 +2694,22 @@ region_rect = Rect2(16, 8, 32, 40)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(845, 219)
+position = Vector2(622, 218)
 rotation = -3.15479
 scale = Vector2(0.469354, -0.318417)
+skew = 0.284489
+sprite_frames = SubResource("SpriteFrames_hxcga")
+autoplay = "default"
+frame_progress = 0.999425
+offset = Vector2(0.045, 0)
+script = ExtResource("9_0hyce")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(638, 184)
+rotation = -3.15479
+scale = Vector2(0.469354, -0.318417)
+skew = 0.507891
 sprite_frames = SubResource("SpriteFrames_hxcga")
 autoplay = "default"
 frame_progress = 0.999425
@@ -2704,7 +2717,6 @@ offset = Vector2(0.045, 0)
 script = ExtResource("9_0hyce")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-visible = false
 offset_left = 427.0
 offset_top = 159.0
 offset_right = 1707.0
