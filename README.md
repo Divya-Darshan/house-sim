@@ -7,7 +7,7 @@
 ## 📥 Download
 
 👉 **[Download APK here](https://github.com/Divya-Darshan/house-sim/raw/refs/heads/main/apk/app.apk)** 👈  
-👉 **[Download APK here](https://github.com/Divya-Darshan/house-sim/raw/refs/heads/main/fin/app.exe)** 👈  
+👉 **[Download EXE here](https://github.com/Divya-Darshan/house-sim/raw/refs/heads/main/fin/app.exe)** 👈  
 
 
 ---
