@@ -1,9 +1,8 @@
 
-<!--
-## 📸 Screenshot
-![Gameplay Screenshot](./img/test.png)  
 
--->
+## 📸 Screenshot
+![Gameplay Screenshot]( https://raw.githubusercontent.com/Divya-Darshan/house-sim/refs/heads/main/Screenshot%20(232).png )  
+
 ## 📥 Download
 
 👉 **[Download APK here](https://github.com/Divya-Darshan/house-sim/raw/refs/heads/main/apk/app.apk)** 👈  
